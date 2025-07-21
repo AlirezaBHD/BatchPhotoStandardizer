@@ -1,0 +1,156 @@
+MDBoxLayout:
+    orientation: "vertical"
+
+    MDTopAppBar:
+        MDBoxLayout:
+            spacing: dp(20)
+            orientation: "horizontal"
+
+            MDFloatingActionButton:
+                icon: "theme-light-dark"
+                pos_hint: {'center_y': 0}
+                on_release: app.toggle_theme()
+                md_bg_color: 1,1,1,1
+                icon_color: 1,0,0,1
+
+            MDLabel:
+                bold: True
+                text: 'ﺭﻮﺸﮐ ﯽﺘﺴﯾﺰﻬﺑ ﻥﺎﻣﺯﺎﺳ'
+                halign: 'right'
+                size_hint_x: 1
+                pos_hint: {'center_y': 1}
+
+    MDFloatingActionButtonSpeedDial:
+        label_text_color: "red"
+        type: "large"
+        icon_size: dp(56)
+        id: speed_dial
+        data: app.speed_dial_data
+        root_button_anim: True
+        icon: app.icon_path
+        bg_color_root_button: 1,1,1,1
+
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(20)
+
+        MDCard:
+            orientation: "vertical"
+            size_hint: None, None
+            size: "500dp", "550dp"
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            elevation: 5
+            padding: dp(20)
+            spacing: dp(20)
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                spacing: dp(10)
+                MDBoxLayout:
+                    MDRaisedButton:
+                        text: 'ﺍﺪﺒﻣ ﯼﺎﻫ ﺲﮑﻋ ﯼﺭﻮﺘﮐﺮﯾﺍﺩ ﺏﺎﺨﺘﻧﺍ'
+                        id: pictures_path
+                        pos_hint: {"center_x": 0.5, 'center_y': .5}
+                        on_release: app.open_file_manager("ﺍﺪﺒﻣ ﯼﺎﻫ ﺲﮑﻋ ﯼﺭﻮﺘﮐﺮﯾﺍﺩ", "folder", "pictures_path", "[None]")
+                MDLabel:
+                    text: 'ﺍﺪﺒﻣ ﯼﺎﻫ ﺲﮑﻋ ﯼﺭﻮﺘﮐﺮﯾﺍﺩ ﺏﺎﺨﺘﻧﺍ'
+                    pos_hint: {"center_x": 0.5, 'center_y': .5}
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                spacing: dp(10)
+                MDBoxLayout:
+                    MDRaisedButton:
+                        text: 'ﺪﺼﻘﻣ ﯼﺎﻫ ﺲﮑﻋ ﯼﺭﻮﺘﮐﺮﯾﺍﺩ ﺏﺎﺨﺘﻧﺍ'
+                        id: destination
+                        pos_hint: {"center_x": 0.5, 'center_y': .5}
+                        on_release: app.open_file_manager("ﺪﺼﻘﻣ ﯼﺎﻫ ﺲﮑﻋ ﯼﺭ���ﺘﮐﺮﯾﺍﺩ", "folder", "destination", "[None]")
+                MDLabel:
+                    text: 'ﺪﺼﻘﻣ ﯼﺎﻫ ﺲﮑﻋ ﯼﺭﻮﺘﮐﺮﯾﺍﺩ ﺏﺎﺨﺘﻧﺍ'
+                    pos_hint: {"center_x": 0.5, 'center_y': .5}
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                spacing: dp(10)
+                MDBoxLayout:
+                    MDRaisedButton:
+                        text: 'ﻞﺴﮐﺍ ﻞﯾﺎﻓ ﺏﺎﺨﺘﻧﺍ'
+                        id: excel_path
+                        pos_hint: {"center_x": 0.5, 'center_y': .5}
+                        on_release:
+                            app.open_file_manager("ﻞﺴﮐﺍ ﻞﯾﺎﻓ", "file", "excel_path", [".xlsx", ".xlsm", ".xltx", ".xltm"])
+                            app.show_snackbar('ﻝﻮﺒﻗ ﻞﺑﺎﻗ ﯼﺎﻫ ﻞﺴﮐﺍ: .xlsx, .xlsm, .xltx, .xltm')
+                MDLabel:
+                    text: 'ﻞﺴﮐﺍ ﻞﯾﺎﻓ ﺏﺎﺨﺘﻧﺍ'
+                    pos_hint: {"center_x": 0.5, 'center_y': .5}
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                spacing: dp(10)
+                MDBoxLayout:
+                    MDRaisedButton:
+                        text: 'ﻪﺳﺎﻨﺷ ﻥﻮﺘﺳ ﻩﺭﺎﻤﺷ'
+                        id: dropdown_column_id
+                        pos_hint: {"center_x": 0.5, 'center_y': .5}
+                        on_release: app.open_dropdown("column_id", self)
+                MDLabel:
+                    text: 'ﻪﺳﺎﻨﺷ ﻥﻮﺘﺳ ﻩﺭﺎﻤﺷ'
+                    pos_hint: {"center_x": 0.5, 'center_y': .5}
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                spacing: dp(10)
+                MDBoxLayout:
+                    MDRaisedButton:
+                        text: 'ﺕﺭﺎﮐ ﻥﻮﺘﺳ ﻩﺭﺎﻤﺷ'
+                        id: dropdown_column_card
+                        pos_hint: {"center_x": 0.5, 'center_y': .5}
+                        on_release: app.open_dropdown("column_card", self)
+                MDLabel:
+                    text: 'ﺕﺭﺎﮐ ﻥﻮﺘﺳ ﻩﺭﺎﻤﺷ'
+                    pos_hint: {"center_x": 0.5, 'center_y': .5}
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                spacing: dp(10)
+                MDBoxLayout:
+                    MDRaisedButton:
+                        text: 'ﯽﻤﯾﺪﻗ ﺪﻧﻮﺴﭘ'
+                        id: dropdown_old_suffix
+                        pos_hint: {"center_x": 0.5, 'center_y': .5}
+                        on_release: app.open_dropdown("old_suffix", self)
+                MDLabel:
+                    text: 'ﯽﻤﯾﺪﻗ ﺪﻧﻮﺴﭘ'
+                    pos_hint: {"center_x": 0.5, 'center_y': .5}
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                spacing: dp(10)
+                MDBoxLayout:
+                    MDRaisedButton:
+                        text: 'ﺪﯾﺪﺟ ﺪﻧﻮﺴﭘ'
+                        id: dropdown_new_suffix
+                        pos_hint: {"center_x": 0.5, 'center_y': .5}
+                        on_release: app.open_dropdown("new_suffix", self)
+                MDLabel:
+                    text: 'ﺪﯾﺪﺟ ﺪﻧﻮﺴﭘ'
+                    pos_hint: {"center_x": 0.5, 'center_y': .5}
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                spacing: dp(10)
+                MDBoxLayout:
+                    MDRaisedButton:
+                        pos_hint: {"center_x": .5, "center_y": .2}
+                        text: 'ﯽﻤﯾﺪﻗ ﺪﻧﻮﺸﯿﭘ'
+                        id: dropdown_delimiter
+                        on_release: app.open_dropdown("delimiter", self)
+                MDLabel:
+                    text: 'ﯽﻤﯾﺪﻗ ﺪﻧﻮﺸﯿﭘ'
+                    pos_hint: {"center_x": .5, "center_y": .5}
+
+            MDRaisedButton:
+                text: 'ﺍﺮﺟﺍ ﻭ ﺖﺒﺛ'
+                pos_hint: {"center_x": 0.5, 'center_y': .5}
+                on_release: app.submit()
