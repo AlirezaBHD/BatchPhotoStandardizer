@@ -1,6 +1,6 @@
 # 📸 Automated Image Processor for Welfare Organization
 
-<img width="998" height="659" alt="BehzistiDark" src="https://github.com/user-attachments/assets/0a38588f-1bbf-4a6b-99c2-932216fa06de" /><img width="1000" height="660" alt="BehzistiLight" src="https://github.com/user-attachments/assets/d8942020-2d4d-4a5b-8b5e-51392b0e1e27" />
+<img width="1438" height="1018" alt="landing" src="https://github.com/user-attachments/assets/89fbe9d6-354e-4ea4-9e86-eec421c0ccd2" />
 
 
 
